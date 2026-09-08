@@ -4,6 +4,7 @@ namespace WatchSync.Configuration;
 
 public class PluginConfiguration : BasePluginConfiguration
 {
+    public string SyncUser {get; set; } = string.Empty;
     public string Options { get; set; } = "OneOption";
     public int AnInteger { get; set; }
     public bool TrueFalseSetting { get; set; }

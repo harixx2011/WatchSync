@@ -70,6 +70,7 @@
                 .addEventListener('pageshow', function() {
                     Dashboard.showLoadingMsg();
                     ApiClient.getPluginConfiguration(WatchSyncConfig.pluginUniqueId).then(function (config) {
+                        document.querySelector('#SyncUser').value = config.SyncUser;
                         document.querySelector('#Options').value = config.Options;
                         document.querySelector('#AnInteger').value = config.AnInteger;
                         document.querySelector('#TrueFalseSetting').checked = config.TrueFalseSetting;
@@ -86,6 +87,7 @@
                 e.preventDefault();
                 Dashboard.showLoadingMsg();
                 ApiClient.getPluginConfiguration(WatchSyncConfig.pluginUniqueId).then(function (config) {
+                    config.SyncUser = document.querySelector('#SyncUser').value;
                     config.Options = document.querySelector('#Options').value;
                     config.AnInteger = document.querySelector('#AnInteger').valueAsNumber;
                     config.TrueFalseSetting = document.querySelector('#TrueFalseSetting').checked;
